@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 import * as XLSX from "xlsx";
+import { CSVLink, CSVDownload } from "react-csv";
 
 export default function UploadFile() {
   const [data, setData] = useState([]);
@@ -36,13 +37,13 @@ export default function UploadFile() {
       const row = dataStringLines[i].split(
         /,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/
       );
-      if (headers && row.length == headers.length) {
+      if (headers && row.length === headers.length) {
         const obj = {};
         for (let j = 0; j < headers.length; j++) {
           let d = row[j];
           if (d.length > 0) {
-            if (d[0] == '"') d = d.substring(1, d.length - 1);
-            if (d[d.length - 1] == '"') d = d.substring(d.length - 2, 1);
+            if (d[0] === '"') d = d.substring(1, d.length - 1);
+            if (d[d.length - 1] === '"') d = d.substring(d.length - 2, 1);
           }
           if (headers[j]) {
             obj[headers[j]] = d;
@@ -65,12 +66,14 @@ export default function UploadFile() {
     setData(list);
     setColumns(columns);
   };
-
+  console.log("Columns:" + columns);
+  console.log("Data:" + data);
   return (
     <div>
       <h3>Upload CSV file</h3>
       <input type="file" accept=".csv,.xlsx,.xls" onChange={handleFileUpload} />
-      <DataTable pagination highlightOnHover columns={columns} data={data} />
+      <CSVLink data={data}>Download me</CSVLink>
+      <DataTable highlightOnHover columns={columns} data={data} />
     </div>
   );
 }
