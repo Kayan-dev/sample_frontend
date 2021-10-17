@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import * as XLSX from "xlsx";
 import { CSVLink } from "react-csv";
+import Filtering from "../filter/Filter";
 
 export default function UploadFile() {
   const [data, setData] = useState([]);
@@ -53,6 +54,7 @@ export default function UploadFile() {
         // remove the blank rows
         if (Object.values(obj).filter((x) => x).length > 0) {
           list.push(obj);
+          console.log("object:", list);
         }
       }
     }
@@ -65,14 +67,24 @@ export default function UploadFile() {
 
     setData(list);
     setColumns(columns);
+    console.log("string:", dataStringLines);
+    console.log("columns:", columns);
   };
-
+  console.log("data:", data);
   return (
     <div>
       <h3>Upload CSV file</h3>
-      <input type="file" accept=".csv,.xlsx,.xls" onChange={handleFileUpload} />
+      <input
+        className="bg-black-10"
+        type="file"
+        accept=".csv,.xlsx,.xls"
+        onChange={handleFileUpload}
+      />
       <CSVLink data={data}>Download table</CSVLink>
-      <DataTable highlightOnHover columns={columns} data={data} />
+      {/* <Filtering columns={columns}> </Filtering> */}
+      <div className="ba ma4 bw1 shadow-5 pa3 bg-black-10">
+        <DataTable highlightOnHover columns={columns} data={data} pagination />
+      </div>
     </div>
   );
 }
