@@ -7,7 +7,6 @@ import SamplePage from "./Pages/OverviewPages/SamplePage";
 import Navigation from "./components/Navigation";
 
 function App() {
-  console.log("Hello");
   return (
     <div className="App">
       <Navigation />

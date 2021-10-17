@@ -1,10 +1,10 @@
 import React from "react";
-import CardList from "../../components/Cards/CardList";
-import CsvReader from "../../components/Form/CsvReader";
-import CSVReader1 from "../../components/Form/ImportCSV";
-import ImportCSV from "../../components/Form/ImportCSV";
 import UploadFile from "../../components/Form/uploadFile";
-import { info } from "./info";
+// import CardList from "../../components/Cards/CardList";
+// import CsvReader from "../../components/Form/CsvReader";
+// import CSVReader1 from "../../components/Form/ImportCSV";
+// import ImportCSV from "../../components/Form/ImportCSV";
+// import { info } from "./info";
 
 export default function PlatePage() {
   return (

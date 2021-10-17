@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import * as XLSX from "xlsx";
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 
 export default function UploadFile() {
   const [data, setData] = useState([]);
@@ -60,19 +60,18 @@ export default function UploadFile() {
     // prepare columns list from headers
     const columns = headers.map((c) => ({
       name: c,
-      selector: c,
+      selector: (row) => row[c],
     }));
 
     setData(list);
     setColumns(columns);
   };
-  console.log("Columns:" + columns);
-  console.log("Data:" + data);
+
   return (
     <div>
       <h3>Upload CSV file</h3>
       <input type="file" accept=".csv,.xlsx,.xls" onChange={handleFileUpload} />
-      <CSVLink data={data}>Download me</CSVLink>
+      <CSVLink data={data}>Download table</CSVLink>
       <DataTable highlightOnHover columns={columns} data={data} />
     </div>
   );
