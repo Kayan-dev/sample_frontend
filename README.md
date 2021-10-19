@@ -22,7 +22,3 @@ Application Architecture is shown below with a sitemap
 
 
 See resources.md for the resources that I used to solve the puzzle around csv files
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
