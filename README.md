@@ -12,14 +12,12 @@ Some packages that are noteworthy:
 - React Router in order to route to different pages
 
 
-Application Architecture incl. sitemap
-![Screenshot 2021-10-19 at 19 12 31](https://user-images.githubusercontent.com/65345557/137959155-602a09a6-c7c6-479d-a5a0-ca3e7ddb7f54.png)
+Application Architecture is shown below with a sitemap
+![Screenshot 2021-10-19 at 19 15 41](https://user-images.githubusercontent.com/65345557/137959532-9d6557dd-d450-451f-9b68-e0bf55644b86.png)
 
+
+See resources.md for the resources that I used to solve the puzzle around csv files
 
 ### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
