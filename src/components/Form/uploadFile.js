@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import * as XLSX from "xlsx";
 import { CSVLink } from "react-csv";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 export default function UploadFile() {
   const [data, setData] = useState([]);
   const [columns, setColumns] = useState([]);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // TODO My problem is now that I need to turn this into a true component
   // I can only make it this for either sample data or plate data
