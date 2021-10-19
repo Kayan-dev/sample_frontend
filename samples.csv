@@ -1,0 +1,5 @@
+Barcode;Owner;Source ;Volume;Buffer;SampleType
+5634;Efe;qPCR;2 ml;water;DNA
+4334;marta;SRD;50 ul;Trist;RNA
+5435;Efe;SDS-PAGE;15 ml;Tris;Protein
+6567;Anne;SDS-PAGE;;alkaline;Protein
