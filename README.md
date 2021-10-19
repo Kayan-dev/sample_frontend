@@ -1,6 +1,6 @@
 I build a minimalistic frontend React application to upload en download CSV files. 
 
-Link for deployed site using Netlify is below:
+Link for deployed site using Netlify:
 https://616f09a01569620007a24b01--boring-benz-9ff76e.netlify.app/
 
 It is a continuous deployment from git(hub).
