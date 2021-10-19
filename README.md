@@ -11,9 +11,9 @@ The technological stack is:
 3) Javascript 6+, HTML5, CSS3
 
 Some packages that are noteworthy:
-- particles.js to make a moving background
+- particles.js to make an alive background.
 - react-data-table to make the table component
-- xlsx & react-csv to read the csv files
+- xlsx & react-csv to read, upload & download csv files
 - React Router in order to route to different pages
 
 
