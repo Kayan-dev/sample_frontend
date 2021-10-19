@@ -1,18 +1,14 @@
 import React from "react";
 import UploadFile from "../../components/Form/uploadFile";
-// import CardList from "../../components/Cards/CardList";
-// import CsvReader from "../../components/Form/CsvReader";
-// import CSVReader1 from "../../components/Form/ImportCSV";
-// import ImportCSV from "../../components/Form/ImportCSV";
-// import { info } from "./info";
 
 export default function PlatePage() {
+  // TODO logic to manage the state still needs to be written
+  // const [plates, setPlates] = useState([state]);
+  // const [barcode, setBarcode] = useState([""]);
+
   return (
     <div>
       <h3>The Plate Overview Page</h3>
-      <div>{/* <CardList info={info}></CardList> */}</div>
-      {/* <CSVReader1></CSVReader1> */}
-      -------------------
       <UploadFile></UploadFile>
     </div>
   );

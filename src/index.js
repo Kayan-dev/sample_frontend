@@ -5,13 +5,18 @@ import "tachyons";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import { persistor, store } from "./store";
+import { PersistGate } from "redux-persist/integration/react";
+import Loading from "./components/Loading";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
+  <Router>
+    <Provider store={store}>
+      <PersistGate loading={<Loading />} persistor={persistor} />
       <App />
-    </Router>
-  </React.StrictMode>,
+    </Provider>
+  </Router>,
   document.getElementById("root")
 );
 

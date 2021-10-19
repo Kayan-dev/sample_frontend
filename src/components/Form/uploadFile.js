@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import * as XLSX from "xlsx";
 import { CSVLink } from "react-csv";
-import Filtering from "../filter/Filter";
+import { useDispatch } from "react-redux";
 
 export default function UploadFile() {
   const [data, setData] = useState([]);
   const [columns, setColumns] = useState([]);
+  const dispatch = useDispatch();
+
+  // TODO My problem is now that I need to turn this into a true component
+  // I can only make it this for either sample data or plate data
+  // so how do I break this apart ?
+
+  //TODO Create a dispatch to the Redux store whenever a change happens
+  // useEffect(() => {
+  //   dispatch();
+  // }, [dispatch]);
 
   // handle file upload
   const handleFileUpload = (e) => {
@@ -28,12 +38,15 @@ export default function UploadFile() {
 
   // process CSV data
   const processData = (dataString) => {
+    // DataStringLines will contain the row data
     const dataStringLines = dataString.split(/\r\n|\n/);
+    // headers will contain the name of the columns
     const headers = dataStringLines[0].split(
       /,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/
     );
-
+    // Adding the data per row into a list of array using a for loop
     const list = [];
+    // For every row, split the data in the csv file to their corresponding columns
     for (let i = 1; i < dataStringLines.length; i++) {
       const row = dataStringLines[i].split(
         /,(?![^"]*"(?:(?:[^"]*"){2})*[^"]*$)/
@@ -54,7 +67,6 @@ export default function UploadFile() {
         // remove the blank rows
         if (Object.values(obj).filter((x) => x).length > 0) {
           list.push(obj);
-          console.log("object:", list);
         }
       }
     }
@@ -64,13 +76,13 @@ export default function UploadFile() {
       name: c,
       selector: (row) => row[c],
     }));
-
+    // Add the row data and column names into local state.
     setData(list);
     setColumns(columns);
-    console.log("string:", dataStringLines);
-    console.log("columns:", columns);
   };
+  // What is the data?
   console.log("data:", data);
+
   return (
     <div>
       <h3>Upload CSV file</h3>
@@ -80,8 +92,9 @@ export default function UploadFile() {
         accept=".csv,.xlsx,.xls"
         onChange={handleFileUpload}
       />
-      <CSVLink data={data}>Download table</CSVLink>
-      {/* <Filtering columns={columns}> </Filtering> */}
+      <CSVLink className="pa3" data={data}>
+        Download table
+      </CSVLink>
       <div className="ba ma4 bw1 shadow-5 pa3 bg-black-10">
         <DataTable highlightOnHover columns={columns} data={data} pagination />
       </div>
