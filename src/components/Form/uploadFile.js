@@ -80,6 +80,7 @@ export default function UploadFile() {
     setData(list);
     setColumns(columns);
   };
+
   // What is the data?
   console.log("data:", data);
 
