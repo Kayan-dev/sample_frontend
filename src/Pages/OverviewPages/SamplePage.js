@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { CSVLink } from "react-csv";
 import DataTable from "react-data-table-component";
 import UploadFile from "../../components/Form/uploadFile";
+import { fetchSamplesSuccess } from "../../store/plates/actions";
 
 export default function SamplePage() {
   // TODO logic to manage the state still needs to be written
@@ -10,7 +12,13 @@ export default function SamplePage() {
 
   const [data, setData] = useState([]);
   const [columns, setColumns] = useState([]);
+
+  // TODO: below is code that will be needed when trying to fetch already existing sample data
   // const dispatch = useDispatch();
+
+  //   useEffect(() => {
+  //     dispatch(fetchSpaces());
+  //   }, [dispatch]);
 
   return (
     <div>
