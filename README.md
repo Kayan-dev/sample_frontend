@@ -1,6 +1,10 @@
 I build a minimalistic frontend React application to upload en download CSV files. 
 
-Link for deployed site using Netlify:
+In order to test out this frontend application simply clone this repository using 'git clone git@github.com:Kayan-dev/sample_frontend.git' 
+into a folder of your liking and type as command 'npm run start' in the folder you cloned the repository too. 
+
+Do you want to check it now?
+Then use the link below for deployed site using Netlify:
 https://616f09a01569620007a24b01--boring-benz-9ff76e.netlify.app/
 
 It is a continuous deployment from git(hub).
