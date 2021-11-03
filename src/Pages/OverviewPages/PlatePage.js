@@ -1,5 +1,6 @@
 import React from "react";
-import UploadFile from "../../components/Form/uploadFile";
+import Filtering from "../../components/filter/Filter";
+import UploadFile from "../../components/CSV/uploadFile";
 
 export default function PlatePage() {
   // TODO logic to manage the state still needs to be written

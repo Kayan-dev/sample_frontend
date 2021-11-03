@@ -1,11 +1,3 @@
-import { render, screen } from "@testing-library/react";
-import App from "./App";
-import { UploadFile } from "../src/components/Form/uploadFile";
-import {
-  // fetchSamplesSuccess,
-  FETCH_SAMPLES_SUCCES,
-} from "./store/plates/actions";
-
 const fetchSamplesSuccess = (samples) => ({
   type: "FETCH_SAMPLES_SUCCES",
   payload: samples,
@@ -44,38 +36,3 @@ describe("#fetchSamplesSucces", () => {
     });
   });
 });
-
-// describe("#fetchSpacesSuccess", () => {
-//   describe("if given an array of spaces", () => {
-//     test("should return an action object", () => {
-//       // test data simulating spaces
-//       const spaces = [{}];
-//       // build action we expect to get back
-//       const expected = {
-//         type: "FETCH_SPACES_SUCCESS",
-//         payload: spaces,
-//       };
-//       // call function
-//       const action = fetchSpacesSuccess(spaces);
-//       // do assertion on function return
-//       expect(action).toBe(expected);
-//     });
-//   });
-// });
-
-// describe("#returntableofdata", () => {
-//   describe("if given an array of samples/plates", () => {
-//     test();
-//     // test data
-//     const data = [{}];
-//   });
-//   // what do we expect back
-//   const expected = {
-//     type: UploadFile,
-//     payload: data,
-//   };
-// });
-// test("<UploadFile>", () => {
-//   const value = [{}];
-//   expect(false).toBeTruthy();
-// });

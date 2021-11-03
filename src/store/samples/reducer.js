@@ -11,3 +11,11 @@ export default function Sample(state = initialState, action) {
       return state;
   }
 }
+
+// Sample: {
+//   Barcode: 1234, Location;
+//   FreezerID;
+//   Date;
+//   PlateType;
+//   PlateID: 555;
+// }

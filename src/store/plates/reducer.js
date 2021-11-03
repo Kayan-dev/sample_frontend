@@ -16,27 +16,19 @@ export default function Plates(state = initialState, action) {
 
 Plate: {
   Barcode: 555
-  Owner
-  Source
-  Volume
-  Buffer
-  SampleType,
+  Owner: Alex,
+  Source: Hamilton,
+  Volume: 50 uL,
+  Buffer: Tris 9.0,
+  SampleType: DNA,
   Sample: [
     {
-    ID: 1234,
-    ID: 1235,
-    ID: 2345
+    ID: 234,
+    ID: 12235,
+    ID: 5690,
+    ID: 5690
     }
   ]
 }
 
-/*
-Sample: {
-  Barcode: 1234,
-  Location
-  FreezerID
-  Date
-  PlateType
-  PlateID: 555
-}
 */
